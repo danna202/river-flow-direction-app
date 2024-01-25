@@ -1,15 +1,25 @@
 // src/components/AuthComponent.js
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const AuthComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSignUp, setIsSignUp] = useState(true);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add authentication logic here (e.g., send data to backend for signup/login)
-    console.log(`Email: ${email}, Password: ${password}, Mode: ${isSignUp ? 'Signup' : 'Login'}`);
+
+    try {
+      const response = await axios.post(
+        isSignUp ? 'http://localhost:5000/api/signup' : 'http://localhost:5000/api/login',
+        { email, password }
+      );
+
+      console.log(response.data.message);
+    } catch (error) {
+      console.error('Authentication error:', error);
+    }
   };
 
   return (
