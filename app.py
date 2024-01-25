@@ -1,14 +1,11 @@
 # app.py
+import bcrypt
 from flask import Flask, request, jsonify
-from flask_cors import CORS
-from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://your_username:your_password@localhost/your_database'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-CORS(app)
-bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
 class User(db.Model):
@@ -42,5 +39,6 @@ def login():
         return jsonify({'message': 'Login failed'})
 
 if __name__ == '__main__':
-    db.create_all()
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)

@@ -2,15 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-
-
+import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 
 const RiverFlowApp = () => {
   const [riverData, setRiverData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch river flow data from your backend API
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/river-flow-data');
@@ -31,7 +29,7 @@ const RiverFlowApp = () => {
         <p>Loading...</p>
       ) : (
         <MapContainer
-          center={[37.7749, -122.4194]} // Default to San Francisco
+          center={[37.7749, -122.4194]}
           zoom={5}
           style={{ height: '500px', width: '100%' }}
         >
@@ -44,7 +42,11 @@ const RiverFlowApp = () => {
               key={river.id}
               position={[river.latitude, river.longitude]}
             >
-              <Popup>{`River: ${river.name}, Flow Direction: ${river.flowDirection}`}</Popup>
+              <Popup>
+                <strong>River:</strong> {river.name}
+                <br />
+                <strong>Flow Direction:</strong> {river.flowDirection}
+              </Popup>
             </Marker>
           ))}
         </MapContainer>
