@@ -1,8 +1,7 @@
-// src/components/RiverFlowApp.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
+import 'leaflet/dist/leaflet.css';
 
 const RiverFlowApp = () => {
   const [riverData, setRiverData] = useState([]);
