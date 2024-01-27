@@ -10,11 +10,23 @@ const RiverFlowApp = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/api/river-flow-data');
-        setRiverData(response.data);
+        // Fetch river flow data
+        const riverResponse = await axios.get('/api/river-flow-data');
+        setRiverData(riverResponse.data);
+
+        // Fetch data from Streamer Trace API
+        const streamerResponse = await axios.get('STREAMER_TRACE_API_ENDPOINT', {
+          headers: {
+            Authorization: `Bearer YOUR_API_KEY`,
+          },
+        });
+
+        // Process the Streamer Trace API data
+        console.log(streamerResponse.data);
+
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching river flow data', error);
+        console.error('Error fetching data', error);
       }
     };
 

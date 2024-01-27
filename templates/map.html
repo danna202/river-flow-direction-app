@@ -1,53 +1,93 @@
 <!DOCTYPE html>
 <!--
-Streamer Map Services: HydroBaseMapForTerrain Leaflet Example
-U.S. Geological Survey
-Texas Water Science Center, Austin
+..........................................................
+SAMPLE 5: Adding a basemap with Streamer streams and labels
+..........................................................
+U.S. Geological Survey, Texas Water Science Center, Austin
+https://txpub.usgs.gov/DSS/Streamer/
 streamer@usgs.gov
+..........................................................
 -->
 <html>
     <!-- HTML HEAD -->
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Streamer Map Services: HydroBaseMapForTerrain Leaflet Example</title>
+        <title>Streamer Trace API: Sample #5</title>
         
-        <!-- page styling -->
+        <!-- ESRI JSAPI 3.14 -->
+        <link rel="stylesheet" href="https://js.arcgis.com/3.14/esri/css/esri.css">
+        <script type="text/javascript" src="https://js.arcgis.com/3.14/"></script>
+        
+        <!-- Streamer Trace JSAPI 3.14 -->
+        <script type="text/javascript" src="https://txpub.usgs.gov/DSS/Streamer/api/3.14/js/trace_api.min.js"></script>
+        
+        <!-- css styling -->
         <style type="text/css">
             html, body, #map {
-                height   : 100%;
-                width    : 100%;
-                margin   : 0px;
-                padding  : 0px;
-                overflow : hidden;
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+            }
+            #description {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                background: rgba(255,255,255,0.8);
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                z-index: 99;
             }
         </style>
         
-        <!-- Leaflet -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+        <!-- main JavaScript -->
+        <script type="text/javascript">
+            require( ["esri/map","dojo/domReady!"], function(Map) {
+                // create map
+                // set the map LevelsOfDetail (zoom levels) to the Trace API basemapLODs
+                var map = new Map("map", {
+                    "center"          : [-99,38],
+                    "zoom"            : 0,
+                    "lods"            : trace_api.basemapLODs,
+                    "showAttribution" : false,
+                    "logo"            : false
+                });
+                
+                //  add basemap and mask layers when the api is loaded
+                trace_api.on("load", function() {
+                    // add Streamer Trace API "terrain" basemap to the map
+                    // this is the ESRI "terrain" basemap with the stream network and labels used by Streamer
+                    trace_api.addBasemap({
+                        "map"     : map,
+                        "basemap" : "terrain",
+                        "opacity" : 1
+                    });
+                    
+                    // add gray mask of the United States
+                    trace_api.toggleUsaMask({
+                        "map"     : map,  // map to use
+                        "visible" : true, // toggle visible
+                        "opacity" : 0.5   // opacity (0-1, 1=100% opaque)
+                    });
+                });
+                
+            }); // end require
+        </script>
     </head>
     
     <!-- HTML BODY -->
     <body>
+        <!-- description -->
+        <div id="description">
+            <b>SAMPLE 5:</b> Adding a basemap with Streamer streams and labels
+        </div>
+        
         <!-- map -->
         <div id="map"></div>
-        <script type="text/javascript">
-            // create map with ESRI World Terrain Base layer and HydroBaseMapForTerrain layers
-            var map = new L.Map( "map", {
-                "minZoom" : 4,
-                "maxZoom" : 11,
-                "layers"  : [
-                    L.tileLayer( "https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}" ),
-                    L.tileLayer( "https://txgeo.usgs.gov/arcgis/rest/services/Mapping/HydroBaseMapForTerrain/MapServer/tile/{z}/{y}/{x}" )
-                ],
-                "center"  : new L.LatLng(38,-99),
-                "zoom"    : 5,
-                "attributionControl" : false
-            });
-            
-            // add scale bar
-            L.control.scale().addTo(map);
-        </script>
     </body>
     
 </html>
+<!-- END Streamer Trace API SAMPLE -->
