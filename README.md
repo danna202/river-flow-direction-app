@@ -1,6 +1,6 @@
- **US River Currents Flow Map**
+ # **US River Currents Flow Map** #
 
-_Milestone Project 3:  US River Currents Flow Map_
+## _Milestone Project 3:  US River Currents Flow Map_ ##
 
 Created by Danna Bohnhoff
 
@@ -16,6 +16,6 @@ Features:
 7. Map Layers
 8. Help Section
 
-GitHub Repository
+GitHub Repository:  https://github.com/danna202/river-flow-direction-app.git
 
 Deploy
