@@ -34,5 +34,5 @@ This application utilizes the Streamer Trace API to display the directional flow
 https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png
 
 ## **Database:  PageAdmin4** ##
-![database](./assets/pageAdmin.png)
 
+![database](<page admin us-river-database-1.png>)
