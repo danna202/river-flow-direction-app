@@ -4,7 +4,7 @@
 
 Created by Danna Bohnhoff
 
-![river flowing over rocks](image.png)
+![river flowing over rocks](./assets/image.png)
 
 ## **Features:** ##
 1. Interactive Map Interface
