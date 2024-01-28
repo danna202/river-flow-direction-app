@@ -31,6 +31,7 @@ const AuthComponent = () => {
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <br />
+
         <label>
           Password:
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -38,9 +39,14 @@ const AuthComponent = () => {
         <br />
         <button type="submit">{isSignUp ? 'Sign Up' : 'Login'}</button>
       </form>
+      <br />
+      <br />
+
       <p onClick={() => setIsSignUp((prev) => !prev)}>
         {isSignUp ? 'Already have an account? Login' : 'Don\'t have an account? Sign Up'}
       </p>
+      <br />
+      <br />
     </div>
   );
 };

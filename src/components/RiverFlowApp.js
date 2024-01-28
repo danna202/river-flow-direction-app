@@ -37,7 +37,7 @@ const RiverFlowApp = () => {
     <div>
       <h1>River Flow Direction App</h1>
       {loading ? (
-        <p>Loading...</p>
+        <p>Map</p>
       ) : (
         <MapContainer
           center={[37.7749, -122.4194]}
