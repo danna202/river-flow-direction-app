@@ -35,4 +35,4 @@ https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.p
 
 ## **Database:  PageAdmin4** ##
 
-![database](<page admin us-river-database-1.png>)
+
