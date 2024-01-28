@@ -4,6 +4,7 @@
 
 Created by Danna Bohnhoff
 
+
 ![river flowing over rocks](image.png)
 
 Features:
@@ -19,7 +20,8 @@ Features:
 
 GitHub Repository:  https://github.com/danna202/river-flow-direction-app.git
 
-Deploy using vercel
+Deploy using vercel: [(river-flow-direction-app.vercel.app)]
+
 
 How to Use:
 
