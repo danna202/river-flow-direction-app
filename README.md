@@ -31,7 +31,7 @@ This site was Deployed by Vercel using [River-Flow-Direction](https://river-flow
 This application utilizes the Streamer Trace API to display the directional flow of rivers in the United States. By selecting a specific river or stream, users can view the direction in which the river flows towards the sea into which it empties.
 
 ## **Traceable streams of US:** ##
-https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png
+![us streams] (https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png)
 
 ## **Database:  PageAdmin4** ##
 
