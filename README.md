@@ -31,5 +31,5 @@ traceable streams of US:
 https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png
 
 Database:  PageAdmin4
-![database](C:\Users\jebdk\OneDrive\Pictures\Screenshots\page admin us-river-database.png)
+![database](<page admin us-river-database.png>)
 
