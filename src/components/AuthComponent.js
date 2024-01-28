@@ -1,6 +1,8 @@
 // src/components/AuthComponent.js
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+
+
 
 const AuthComponent = () => {
   const [email, setEmail] = useState('');
@@ -10,21 +12,24 @@ const AuthComponent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post(
-        isSignUp ? 'http://localhost:5000/api/signup' : 'http://localhost:5000/api/login',
-        { email, password }
-      );
+  //   try {
+  //     const response = await axios.post(
+  //       isSignUp ? 'http://localhost:5000/api/signup' : 'http://localhost:5000/api/login',
+  //       { email, password }
+  //     );
 
-      console.log(response.data.message);
-    } catch (error) {
-      console.error('Authentication error:', error);
-    }
+  //     console.log(response.data.message);
+  //   } catch (error) {
+  //     console.error('Authentication error:', error);
+  //   }
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}> 
+      <br />
+        {/* <button type="submit">{isSignUp ? 'Sign Up' : 'Login'}</button> */}
+      </form>
         <label>
           Email:
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -35,15 +40,16 @@ const AuthComponent = () => {
           Password:
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
-        <br />
+        {/* <br />
         <button type="submit">{isSignUp ? 'Sign Up' : 'Login'}</button>
-      </form>
+      </form> */}
       <br />
       <br />
 
       <p onClick={() => setIsSignUp((prev) => !prev)}>
         {isSignUp ? 'Already have an account? Login' : 'Don\'t have an account? Sign Up'}
       </p>
+      <button type="submit">{isSignUp ? 'Sign Up' : 'Login'}</button>
       <br />
       <br />
     </div>

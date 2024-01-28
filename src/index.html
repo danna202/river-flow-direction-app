@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title></title>
-                
-        <link rel="stylesheet" href="https://js.arcgis.com/3.14/esri/css/esri.css">
-        <script src="https://js.arcgis.com/3.14/"></script>
-        <script src="https://txpub.usgs.gov/DSS/Streamer/api/3.14/js/trace_api.min.js"></script>
-        
-        <style type="text/css">
-            html, body, #map {
-                height: 100%;
-                width: 100%;
-                margin: 0px;
-                padding: 0px;
-                overflow: hidden;
-            }
-        </style>
-        
-            <script type="text/javascript">
-            require( ["esri/map","dojo/domReady!"], function(Map) {
-            
-                var map = new Map("map", {
-                    "basemap": "topo",
-                    "center": [-99,38],
-                    "zoom": 5,
-                    "showAttribution": false,
-                    "logo": false
-                });
-                
-                trace_api.on("load", function() {
-                    trace_api.addTrace({
-                        "map": map,
-                        "x": -105,
-                        "y": 39.76,
-                        "originPoint": "infoHover"
-                    });
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/3.14/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.14/"></script>
+    <script src="https://txpub.usgs.gov/DSS/Streamer/api/3.14/js/trace_api.min.js"></script>
+
+    <style type="text/css">
+        html,
+        body,
+        #map {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+    </style>
+
+    <script type="text/javascript">
+        require(["esri/map", "dojo/domReady!"], function (Map) {
+
+            var map = new Map("map", {
+                "basemap": "topo",
+                "center": [-99, 38],
+                "zoom": 5,
+                "showAttribution": false,
+                "logo": false
+            });
+
+            trace_api.on("load", function () {
+                trace_api.addTrace({
+                    "map": map,
+                    "x": -105,
+                    "y": 39.76,
+                    "originPoint": "infoHover"
                 });
             });
-        </script>
-    </head>
+        });
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+    <!-- Replace the placeholder with the provided image URL -->
+        <img src="./assets/streamtracer.png" alt="Custom Map Image" style="position: absolute; top: 0; left: 0; z-index: -1; opacity: 0.5;">
+</body>
+</html>
     
-    <body>
-        <div id="map"></div>
-        <!-- Replace the placeholder with the provided image URL -->
-        <img src="https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png" alt="Custom Map Image" style="position: absolute; top: 0; left: 0; z-index: -1; opacity: 0.5;">
-    </body>
-    
-    </html>

@@ -1,5 +1,7 @@
 
 body {
+    /* align center */
+    display: block;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -95,6 +97,8 @@ font-size: 20px;
 color: #684531;
 
 label {
+    /* center label */
+    display: block;
     font-family: 'Oswald', sans-serif;
     font-size: 30px;
     color: #684531;
@@ -120,6 +124,8 @@ label {
 
 
 input[type=text] {
+    /* center text*/
+    display: block;
     background-color: #FFF7D6;
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
@@ -146,7 +152,9 @@ input[type=text] {
 
 }
 
-button {             
+button {   
+           /* center button */
+    display: block;
     background-color: #684531;
     font-family: 'Oswald', serif;
     font-size: 20px;
@@ -182,8 +190,7 @@ button {
 }
 
 button:hover {
-    background-color: #00565E;
-  
+    background-color: #00565E; 
     color: #00A9C4;
 }
 
@@ -192,11 +199,10 @@ margin-bottom: 30px;
 }
 
 form {
+    /* align center */
+    display: block;
     margin-bottom: 30px;    
 }
-
-
-
 
 p {
     background-color: #FFF7D6;
