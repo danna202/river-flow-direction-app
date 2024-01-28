@@ -4,10 +4,9 @@
 
 Created by Danna Bohnhoff
 
-
 ![river flowing over rocks](image.png)
 
-Features:
+## **Features:** ##
 1. Interactive Map Interface
 2. River Names and Labels
 3. Search Functional
@@ -34,6 +33,6 @@ This application utilizes the Streamer Trace API to display the directional flow
 ## **Traceable streams of US:** ##
 https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png
 
-##Database:  PageAdmin4##
+## **Database:  PageAdmin4** ##
 ![database](<page admin us-river-database.png>)
 
