@@ -1,3 +1,4 @@
+import os
 import bcrypt
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -5,9 +6,15 @@ from flask_bcrypt import Bcrypt
 from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/us-river-flow'
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # Enable CORS
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/us-river-flow'
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# db = SQLAlchemy(app)
+# bcrypt = Bcrypt(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI', 'postgresql://postgres:postgres@localhost/us-river-flow')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key')
+
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
@@ -49,6 +56,3 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
-# if __name__ == '__main__':
-#     db.create_all()
-    # app.run(debug=True)

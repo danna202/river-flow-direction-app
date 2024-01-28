@@ -1,3 +1,4 @@
+/* global trace_api */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -11,18 +12,42 @@ const RiverFlowApp = () => {
     const fetchData = async () => {
       try {
         // Fetch river flow data
+        // const riverResponse = await axios.get('/api/river-flow-data');
+        // setRiverData(riverResponse.data);
+
+        // Fetch data from Streamer Trace API
+        // const streamerResponse = await axios.get('STREAMER_TRACE_API_ENDPOINT', {
+        //   headers: {
+        //     Authorization: `Bearer YOUR_API_KEY`,
+        //   },
+        // });
+
+        // Process the Streamer Trace API data
+        // console.log(streamerResponse.data);
+
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.error('Error fetching data', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+// Fetch river flow data
         const riverResponse = await axios.get('/api/river-flow-data');
         setRiverData(riverResponse.data);
 
-        // Fetch data from Streamer Trace API
-        const streamerResponse = await axios.get('STREAMER_TRACE_API_ENDPOINT', {
-          headers: {
-            Authorization: `Bearer YOUR_API_KEY`,
-          },
-        });
+        // Fetch data from Streamer Trace API (integrate directly into your React component)
+        // Example: Load the Streamer Trace API script dynamically
+        const script = document.createElement('script');
+        // script.src = 'https://txpub.usgs.gov/DSS/Streamer/api/3.14/js/trace_api.min.js';
+        script.src = '/static/trace_api.min.js';  
+        script.async = true;
+        document.body.appendChild(script);
 
         // Process the Streamer Trace API data
-        console.log(streamerResponse.data);
+        console.log(trace_api);
 
         setLoading(false);
       } catch (error) {
@@ -32,7 +57,6 @@ const RiverFlowApp = () => {
 
     fetchData();
   }, []);
-
   return (
     <div>
       <h1>River Flow Direction App</h1>
