@@ -380,3 +380,16 @@ margin: auto;
 
 padding: 5px;
 }
+
+/* style.css */
+.landing-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .map-container {
+    height: 400px; /* Set the desired height */
+    width: 80%; /* Set the desired width */
+    margin: 20px auto; /* Center the container */
+  }
+  

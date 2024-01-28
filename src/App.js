@@ -3,6 +3,8 @@ import RiverFlowApp from './components/RiverFlowApp';
 import AuthComponent from './components/AuthComponent';
 import './style.css';
 import MapComponent from './MapComponent';
+import 'leaflet/dist/leaflet.css';
+import LandingPage from './LandingPage';
 
 function App() {
   return (
@@ -10,7 +12,8 @@ function App() {
       <AuthComponent />
       <RiverFlowApp />
       <MapComponent />
-      
+      <LandingPage />
+
     </div>
   );
 }
