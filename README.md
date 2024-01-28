@@ -1,7 +1,9 @@
-# US River Currents Flow Map
-Milestone Project 3:  US River Currents Flow Map
+#**US River Currents Flow Map**
+##_Milestone Project 3:  US River Currents Flow Map_
 
 Created by Danna Bohnhoff
+
+![river flowing over rocks](image.png)
 
 Features:
 1.	Interactive Map Interface
