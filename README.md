@@ -26,6 +26,7 @@ How to Use:
 
 This app will determine the direction that rivers flow in the United States using the Streamer Trace API.  Click on a river or stream, and it will show which the river goes to the sea that it flows into.
 
-![traceable streams of US]https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png
+traceable streams of US:
+https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png
 
 
