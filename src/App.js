@@ -10,6 +10,7 @@ function App() {
       <AuthComponent />
       <RiverFlowApp />
       <MapComponent />
+      
     </div>
   );
 }

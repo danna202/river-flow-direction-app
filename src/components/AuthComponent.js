@@ -24,8 +24,8 @@ const AuthComponent = () => {
 
   return (
     <div>
-      <h2>{isSignUp ? 'Sign Up' : 'Login'}</h2>
-      <form onSubmit={handleSubmit}>
+      {/* {/* <h2>{isSignUp ? 'Sign Up' : 'Login'}</h2> */}
+      <form onSubmit={handleSubmit}> 
         <label>
           Email:
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />

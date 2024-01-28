@@ -1,21 +1,12 @@
-/* add background color */
+
 body {
-  
     margin: 0;
     padding: 0;
-}
-
-/* Create a container for the background image */
-.background-container {
-    height: 15vh; /* Set the height to 25% of the viewport height */
-    background: url('file:///C:/Users/jebdk/OneDrive/Desktop/river%20flow%20over%20rocks.jpg') center center no-repeat;
-
-    background-size: cover;
-}
-
-/* Add other styles for your content, such as text color, font, etc. */
-
-
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
 /* Add other styles for your content, such as text color, font, etc. */
 body {
 background-color: #E9FDFF;

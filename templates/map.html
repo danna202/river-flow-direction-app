@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<!--
-..........................................................
-SAMPLE 5: Adding a basemap with Streamer streams and labels
-..........................................................
-U.S. Geological Survey, Texas Water Science Center, Austin
-https://txpub.usgs.gov/DSS/Streamer/
-streamer@usgs.gov
-..........................................................
--->
 <html>
-    <!-- HTML HEAD -->
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Streamer Trace API: Sample #5</title>
+        <title></title>
         
-        <!-- ESRI JSAPI 3.14 -->
+        <!-- ESRI JSAPI and Streamer Trace API 3.14 -->
         <link rel="stylesheet" href="https://js.arcgis.com/3.14/esri/css/esri.css">
-        <script type="text/javascript" src="https://js.arcgis.com/3.14/"></script>
+        <script src="https://js.arcgis.com/3.14/"></script>
+        <script src="https://txpub.usgs.gov/DSS/Streamer/api/3.14/js/trace_api.min.js"></script>
         
-        <!-- Streamer Trace JSAPI 3.14 -->
-        <script type="text/javascript" src="https://txpub.usgs.gov/DSS/Streamer/api/3.14/js/trace_api.min.js"></script>
-        
-        <!-- css styling -->
+        <!-- CSS styling for map -->
         <style type="text/css">
             html, body, #map {
                 height: 100%;
@@ -30,64 +18,35 @@ streamer@usgs.gov
                 padding: 0px;
                 overflow: hidden;
             }
-            #description {
-                position: absolute;
-                right: 20px;
-                top: 20px;
-                background: rgba(255,255,255,0.8);
-                border: 1px solid black;
-                border-radius: 5px;
-                padding: 10px;
-                font-family: Arial, Helvetica, sans-serif;
-                z-index: 99;
-            }
         </style>
         
-        <!-- main JavaScript -->
+        <!-- JavaScript to create map and add stream trace -->
         <script type="text/javascript">
             require( ["esri/map","dojo/domReady!"], function(Map) {
-                // create map
-                // set the map LevelsOfDetail (zoom levels) to the Trace API basemapLODs
+                // create the ESRI map
                 var map = new Map("map", {
-                    "center"          : [-99,38],
-                    "zoom"            : 0,
-                    "lods"            : trace_api.basemapLODs,
-                    "showAttribution" : false,
-                    "logo"            : false
+                    "basemap": "topo",
+                    "center": [-99,38],
+                    "zoom": 5,
+                    "showAttribution": false,
+                    "logo": false
                 });
-                
-                //  add basemap and mask layers when the api is loaded
+                // add the stream trace
                 trace_api.on("load", function() {
-                    // add Streamer Trace API "terrain" basemap to the map
-                    // this is the ESRI "terrain" basemap with the stream network and labels used by Streamer
-                    trace_api.addBasemap({
-                        "map"     : map,
-                        "basemap" : "terrain",
-                        "opacity" : 1
-                    });
-                    
-                    // add gray mask of the United States
-                    trace_api.toggleUsaMask({
-                        "map"     : map,  // map to use
-                        "visible" : true, // toggle visible
-                        "opacity" : 0.5   // opacity (0-1, 1=100% opaque)
+                    trace_api.addTrace({
+                        "map": map,
+                        "x": -105,
+                        "y": 39.76,
+                        "originPoint": "infoHover"
                     });
                 });
-                
-            }); // end require
+            });
         </script>
     </head>
     
-    <!-- HTML BODY -->
     <body>
-        <!-- description -->
-        <div id="description">
-            <b>SAMPLE 5:</b> Adding a basemap with Streamer streams and labels
-        </div>
-        
-        <!-- map -->
+        <!-- the ESRI map -->
         <div id="map"></div>
     </body>
     
 </html>
-<!-- END Streamer Trace API SAMPLE -->
