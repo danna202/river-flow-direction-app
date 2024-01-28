@@ -20,7 +20,7 @@ Features:
 
 GitHub Repository:  https://github.com/danna202/river-flow-direction-app.git
 
-This site was Deployed using [River-Flow-Direction](https://river-flow-direction-app.vercel.app/).
+This site was Deployed by Vercel using [River-Flow-Direction](https://river-flow-direction-app.vercel.app/).
 
 
 How to Use:
