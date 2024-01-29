@@ -123,9 +123,7 @@ form {
  
 }
 
-
 input[type=text] {
-    /* center text*/
     display: block;
     background-color: #FFF7D6;
     font-family: 'Oswald', sans-serif;
@@ -154,13 +152,12 @@ input[type=text] {
 }
 
 button {   
-           /* center button */
     display: block;
     background-color: #684531;
     font-family: 'Oswald', serif;
     font-size: 20px;
     color: #FFF7D6;
-    width: 200px;
+    width: 400px;
     padding: 10px;
     margin: auto;
     padding: 10px;
@@ -196,13 +193,12 @@ button:hover {
 }
 
 h1 {
-margin-bottom: 30px;
+margin-bottom: 25px;
 }
 
 form {
-    /* align center */
     display: block;
-    margin-bottom: 30px;    
+    margin-bottom: 60px;    
 }
 
 p {
