@@ -11,6 +11,10 @@ const RiverFlowApp = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Fetch data from Streamer Trace API (integrate directly into your React component)
+        // Example: Load the Streamer Trace API script dynamically
+       
+
         // Fetch river flow data
         // const riverResponse = await axios.get('/api/river-flow-data');
         // setRiverData(riverResponse.data);
@@ -41,7 +45,7 @@ const RiverFlowApp = () => {
         // Fetch data from Streamer Trace API (integrate directly into your React component)
         // Example: Load the Streamer Trace API script dynamically
         const script = document.createElement('script');
-        // script.src = 'https://txpub.usgs.gov/DSS/Streamer/api/3.14/js/trace_api.min.js';
+        script.src = 'https://txpub.usgs.gov/DSS/Streamer/api/3.14/js/trace_api.min.js';
         script.src = '/static/trace_api.min.js';  
         script.async = true;
         document.body.appendChild(script);
@@ -60,10 +64,19 @@ const RiverFlowApp = () => {
   return (
     <div>
       <h1>River Flow Direction App</h1>
+  
       {loading ? (
-        <p>Map</p>
+        <div>
+          <p>Map</p>
+          <br />
+          <br />
+          <br />
+          {/* add an image */}
+          <img src="https://txpub.usgs.gov/DSS/Streamer/api/3.14/web/samples/thumbs/sample05_thumb.png" alt="us rivers" />
+        </div>
       ) : (
         <MapContainer
+       
           center={[37.7749, -122.4194]}
           zoom={5}
           style={{ height: '500px', width: '100%' }}

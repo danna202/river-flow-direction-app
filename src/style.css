@@ -96,9 +96,10 @@ font-family: 'Oswald', serif;
 font-size: 20px;
 color: #684531;
 
-label {
-    /* center label */
+form {
+    /* center text */    
     display: block;
+    background-color: #FFF7D6;
     font-family: 'Oswald', sans-serif;
     font-size: 30px;
     color: #684531;
@@ -229,8 +230,16 @@ padding: 5px;
   }
   
   .map-container {
-    height: 400px; 
-    width: 80%; 
-    margin: 20px auto; 
-  }
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
+    margin: 50px auto;
+    }
+
+    /* height: 500px; 
+    width: 100%; 
+    margin: 50px auto;  */
+  
   

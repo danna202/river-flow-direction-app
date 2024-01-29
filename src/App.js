@@ -11,6 +11,9 @@ function App() {
     <div className="App">
       <AuthComponent />
       <RiverFlowApp />
+      <br />
+      <div className="map-container"></div>
+      <br />
       <MapComponent />
       <LandingPage />
 
